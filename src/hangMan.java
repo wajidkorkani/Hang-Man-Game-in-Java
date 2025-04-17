@@ -1,9 +1,11 @@
 import java.util.Scanner;
+import java.util.Random;
 public class hangMan{
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        Random random = new Random();
         int chance = 5;
-        int number = 20;
+        int number = random.nextInt(101);
         while(chance > 0){
             System.out.print(chance < 5 ? "Try again:" : "Guess the number:");
             int answer = input.nextInt();
