@@ -15,7 +15,14 @@ public class hangMan{
                 System.out.println("You lost!");
                 chance = 0;
             }else{
-                System.out.println("Wrong answer");
+                
+                if(answer < number && answer + 3 >= number ||answer > number && answer - 3 <= number){
+                    System.out.println("Almost there");
+                }else if(answer < number && answer + 5 >= number || answer > number && answer - 5 <= number){
+                    System.out.println("You are close");
+                }else{
+                    System.out.println("Wrong answer");
+                }
             }
             chance --;
         }
