@@ -9,13 +9,29 @@ public class hangMan{
         while(chance > 0){
             System.out.print(chance < 5 ? "Try again:" : "Guess the number:");
             int answer = input.nextInt();
+            input.nextLine(); // to fix the classic java issue which skips the input for next line after nextInt.z
             if(number == answer){
                 System.out.println("Right answer");
                 System.out.println("You won");
-                chance = 0;
-            }else if(answer != number && chance < 0){
+                System.out.print("Would you like to play again? ");
+                String playAgain = input.nextLine().toLowerCase();
+                System.out.println(playAgain);
+                if(playAgain == "yes"){
+                    chance = 6;
+                }else{
+                    System.out.println("Thanks for playing the game and good luck for next time.");
+                }
+            }else if(answer != number && chance <= 1){
                 System.out.println("You lost!");
                 chance = 0;
+                System.out.print("Would you like to play again? ");
+                String playAgain = input.nextLine().toLowerCase();
+                System.out.println(playAgain);
+                if(playAgain == "yes"){
+                    chance = 6;
+                }else{
+                    System.out.println("Thanks for playing the game and good luck for next time.");
+                }
             }else{
                 
                 if(answer < number && answer + 3 >= number ||answer > number && answer - 3 <= number){
