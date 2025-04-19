@@ -17,7 +17,7 @@ public class hangMan{
                 String playAgain = input.nextLine().toLowerCase();
                 System.out.println(playAgain);
                 if(playAgain.equals("yes")){
-                    chance = 6;
+                    chance += 6;
                     number = random.nextInt(101);
                     break;
                 }else{
@@ -29,7 +29,7 @@ public class hangMan{
                 String tryAgain = input.nextLine().toLowerCase();
                 System.out.println(tryAgain);
                 if(tryAgain.equals("yes")){
-                    chance = 6;
+                    chance += 6;
                     number = random.nextInt(101);
                     break;
                 }else{
