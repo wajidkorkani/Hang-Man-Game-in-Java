@@ -6,6 +6,7 @@ public class hangMan{
         Random random = new Random();
         int chance = 5;
         int number = random.nextInt(101);
+        System.out.println(number);
         while(chance > 0){
             System.out.print(chance < 5 ? "Try again:" : "Guess the number:");
             int answer = input.nextInt();
@@ -15,22 +16,24 @@ public class hangMan{
                 System.out.println("You won");
                 System.out.print("Would you like to play again? ");
                 String playAgain = input.nextLine().toLowerCase();
-                System.out.println(playAgain);
                 if(playAgain.equals("yes")){
-                    chance += 6;
+                    chance = 5;
                     number = random.nextInt(101);
-                    break;
+                    System.out.println(number);
+                    System.out.println(chance);
                 }else{
                     System.out.println("Thanks for playing the game and good luck for next time.");
+                    chance = 0;
                 }
             }else if(answer != number && chance <= 1){
                 System.out.println("You lost!");
                 System.out.print("Would you like to play again? ");
                 String tryAgain = input.nextLine().toLowerCase();
                 if(tryAgain.equals("yes")){
-                    chance += 6;
+                    chance = 5;
                     number = random.nextInt(101);
-                    break;
+                    System.out.println(number);
+                    System.out.println(chance);
                 }else{
                     System.out.println("Thanks for playing the game and good luck for next time.");
                 }
