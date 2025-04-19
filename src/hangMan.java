@@ -27,7 +27,6 @@ public class hangMan{
                 System.out.println("You lost!");
                 System.out.print("Would you like to play again? ");
                 String tryAgain = input.nextLine().toLowerCase();
-                System.out.println(tryAgain);
                 if(tryAgain.equals("yes")){
                     chance += 6;
                     number = random.nextInt(101);
